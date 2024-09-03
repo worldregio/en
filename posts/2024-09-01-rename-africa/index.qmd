@@ -1,0 +1,56 @@
+---
+title: "Should Africa be renamed?"
+description: "Two philosophs propose to replace Africa by Anaesia"
+author:
+  - name: Claude Grasland
+    url: https://worldregio.github.io/
+    orcid: 0000-0003-1504-4965
+    affiliation: Professor of Geography, Université Paris, UMR 8504 Géographie-cités
+    affiliation-url: https://geographie-cites.cnrs.fr/
+date: 09-01-2024
+categories: [Africa, Language, Continent] # self-defined categories
+citation: 
+  url: https://worldregio.github.io/posts/en/2024-09-01-rename-africa/ 
+image: Anaesia.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+bibliography: references.bib
+---
+
+
+**Should Africa be renamed?** This is the question posed by @chimakonam2021, two philosophers from South Africa and Nigeria, in a research article which they then summarized and disseminated via the popular website of [The Conversation, 08/29/2024](https://theconversation.com/is-africa-a-racial-slur-and-should-the-continent-be-renamed-234740).
+
+## Summary
+
+> In this paper, we will investigate whether or not the name ‘Africa’ can be seen as a slur. Since the name was given by European exploiters, slavers and colonists, it raises the question of whether such a name should continue to be accepted or abandoned. It may seem that just as the slavers renamed their victims and the colonists renamed the territories they conquered, the name Africa/ns similarly was an imposition on the continent and its peoples. It can also be argued that the naming of the continent by an external aggressor is a form of epistemic subordination that vitiates the dignity of the inhabitants. That is to say that European slavers took it upon themselves to give the inhabitants an identity that highlights climate and possibly skin colour because it was something they could not do for themselves. This presents the inhabitants as inferior to their namers and whose millennia-old civilisational achievements can comfortably be overlooked. We argue that the two preceding arguments constitute compelling reasons to abandon the name Africa as a compromised identity and offer an idea for the renaming of the continent.
+
+## References
+
+The two authors follow a postcolonial and critical line of thought, and construct their argument in the form of a dialogue with two main authors:
+
+- @tsri2016 serves as the first reference for the idea that attributing the color “black” to the inhabitants of Africa is a racist stereotype that has its origins in the representations that the Greeks and then the Romans forged of the inhabitants of the southern Mediterranean.
+
+- @ramose2003 is the authors' main reference for criticizing the origin of the word “Africa” and its assignment by Europeans to peoples who had not laid claim to it.   @ramose2003 is the authors' main reference for criticizing the origin of the word “Africa” and its assignment by Europeans to peoples who had not claimed it. Even if the etymology of the word is debated, it seems to designate “a warm place” (in relation to whom?) whose inhabitants would therefore have “black” skin, the whole constituting a racialized, even slave vision.
+
+In other words, *"the history of ‘Africa’ is primarily the history of the West European experience of ‘Africa’, and only secondarily the history of the continent's peoples about themselves ”*. This idea is echoed by Grataloup when he shows that it was Europeans who taught the inhabitants of the southern Mediterranean that they lived on a continent called “Africa” (@grataloup2009,@grataloup2011,@grataloup2013,@capdepuy2024), or in @bopda2003's work on the construction of Cameroon's national identity.
+
+
+## Why rename?
+
+The authors identify several arguments in favor of a name change. The two main ones are as follows: -
+
+- **The definition of Africa by climate is a historical denial** : The authors point out that "*by pointing at climate, the European namer silences the history and civilisations of the people. It is as if those people do not exist. The climate-driven name ‘Africa’ can amount to a denial of the people, their existence and contributions to world history and civilisation. This supports our argument that ‘Africa’ can be viewed as a slur, especially in this age of racism, and that the imposition of the name on the continent by Europeans can be interpreted as a form of epistemic subordination of the inhabitants and their cultures.*"  It's hard not to recall the unfortunate statement made by a French president in Dakar in 2007, when he declared that “*Africa's tragedy is that the African man has not enough enter in history*”[^1].
+
+- **The right of peoples to self-determination of their name** exists at the national level, and must also apply at the continental level: "*If we add to the above our earlier discussion on the metaphysical and psychological import of naming, then we would observe that the European naming of a continent and its peoples is an anomaly. No continent or people should have the right to name another. If, for any reason at all, people have been named by another in the past, it is their duty to rename themselves. And this should apply not just to the continent but to countries as well.*". The authors review the countries that have changed their colonial names, such as Rodesia, and criticize those that have not, such as Côte d'Ivoire. 
+
+## *Anaesia* : Land of origins
+
+The authors end the article by proposing the word *Anaesia* from the Ibo language:  "*Here, we want to propose the name ‘Anaesia’ as a veritable replacement derived from ‘ana and esi’, two words in Igbo-African language that mean ‘land or place of origin.’Footnote10 Our case for the abandonment of the name Africa and its replacement with Anaesia is based on two arguments: dignity and epistemic subordination.*" The idea is to put Africa back on the map as the “first continent” from which all peoples and civilizations originate, and thus to refute the idea of subordination contained in the word Africa, as well as all the climatic or racial undertones it carried.
+
+Nevertheless, the authors acknowledge some difficulties in choosing the language used to describe this “Land of Origins”. Why choose the Ibo language (the language of Nigeria, from which one of the authors of the article originates) rather than another of the many African languages? The authors dodge the question with what can only be called a pirouette: "*Some objections could be raised against our proposal here. Some may question why the entire continent should be named from one of its multiple languages given that the Igbo language is not Africa’s lingua franca. As a result, they may question the possibility of the rest of the continent accessing the Igbo world and the name Anaesia. Others may question our authority to propose a new name for the entire continent. These are legitimate concerns. However, it is important for us to realise that what we are doing is exercise of scholars’ poetic license.*". 
+
+## Words and things
+
+In the end, we agree with the authors when they say that the important thing is not the word, but its meaning. But does the solution really lie in changing the word (replacing Africa with Anaesia) or in changing the meaning given to a word? Does the fact that the word Africa inherits a slave etymology condemn its use in the present, given that its meaning has been modified by the sedimentation of usage over the course of history? 
+
+
+[^1]:https://www.lemonde.fr/afrique/article/2007/11/09/le-discours-de-dakar_976786_3212.html
