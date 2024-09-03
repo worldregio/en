@@ -5,12 +5,12 @@ author:
   - name: Claude Grasland
     url: https://worldregio.github.io/
     orcid: 0000-0003-1504-4965
-    affiliation: Professor of Geography at Université Paris Cité & Member of UMR 8504 Géographie-cités
+    affiliation: Professor of Geography, Université Paris, UMR 8504 Géographie-cités
     affiliation-url: https://geographie-cites.cnrs.fr/
 date: 08-31-2024
 categories: [WorldRegio, Research] # self-defined categories
 citation: 
-  url: https://worldregio.github.io/posts/2024-08-31-worldregio/ 
+  url: https://worldregio.github.io/en/posts/2024-08-31-worldregio/ 
 image: worldregio.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---

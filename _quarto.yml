@@ -10,7 +10,6 @@ website:
         text: "Project"
       - href: author.qmd
         text: "Author"
-      - links.qmd
       - posts.qmd
     right: 
       - icon: github # add icons as navbar buttons
