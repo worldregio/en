@@ -13,6 +13,7 @@ citation:
   url: https://worldregio.github.io/en/posts/2024-09-27-geopolitical-networks/ 
 image: img/network004a.png
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+bibliography: references.bib
 ---
 
 
@@ -46,6 +47,13 @@ The definition of a **geopolitical network** at world level implies the joint de
 -   a finite list of relations between political units called *borders*
 
 Notice that *states* and *borders* are used here in the abstract sense of *edges* and *vertices* which means that they do not necessary fit with the common sense idea.
+
+
+This question of distance between countries has historically been the subject of a great deal of research, notably within the framework of the [correlates of war project (cow)](https://correlatesofwar.org/), a network of political scientists and historians who have tried to understand the causes of wars and conflicts. Among many solutions, the authors often emphasize contiguity, i.e. the presence of a common border:
+
+> "Whatever the reason for the findings connecting contiguity and conflict, geographic proximity is clearly important factor for empirical analyses of international relations. Several approaches are based on continuous measures of distance between countries. The distance between national capitals (Gleditsch and Singer 1975), or between centers of power (Bueno de Mesquita 1981 ), have been used to as measures of geographic proximity. Gleditsch and Ward (2001) have begun to construct a data set based on the concept of minimum distance, which is simply the distance between the two closest points for a pair of states. Nevertheless, direct contiguity is relatively straightforward and has therefore been, by far, the most common way of measuring proximity."[@stinnett2002].
+
+This is the solution we're going to adopt here, in an attempt to update the database produced by these authors in the early 2000s.
 
 ## A. States as vertices ?
 
