@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Claude Grasland">
+<meta name="dcterms.date" content="2024-10-12">
+<meta name="description" content="Analysis of opinions on USA, China, Russia and EU (2003-2023)">
+
+<title>WorldRegio - Mapping Global Opinion</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">WorldRegio</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../author.html" rel="" target="">
+ <span class="menu-text">Author</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/worldregio" rel="" target="_blank"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Mapping Global Opinion</h1>
+                  <div>
+        <div class="description">
+          Analysis of opinions on USA, China, Russia and EU (2003-2023)
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">WorldRegio</div>
+                <div class="quarto-category">Research</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://worldregio.github.io/">Claude Grasland</a> <a href="https://orcid.org/0000-0003-1504-4965" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://geographie-cites.cnrs.fr/">
+              Professor of Geography, Université Paris, UMR 8504 Géographie-cités
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 12, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#the-opinion-on-world-powers" id="toc-the-opinion-on-world-powers" class="nav-link" data-scroll-target="#the-opinion-on-world-powers">The opinion on world powers</a></li>
+  <li><a href="#spatial-coverage" id="toc-spatial-coverage" class="nav-link" data-scroll-target="#spatial-coverage">Spatial coverage</a></li>
+  <li><a href="#multidimensional-array" id="toc-multidimensional-array" class="nav-link" data-scroll-target="#multidimensional-array">Multidimensional array</a></li>
+  </ul></li>
+  <li><a href="#evolution-of-global-opinion-on-major-power" id="toc-evolution-of-global-opinion-on-major-power" class="nav-link" data-scroll-target="#evolution-of-global-opinion-on-major-power">Evolution of global opinion on major power</a></li>
+  <li><a href="#classification-of-survey-countries-according-to-world-power-preferences" id="toc-classification-of-survey-countries-according-to-world-power-preferences" class="nav-link" data-scroll-target="#classification-of-survey-countries-according-to-world-power-preferences">Classification of survey countries according to world power preferences</a>
+  <ul class="collapse">
+  <li><a href="#two-major-dimensions" id="toc-two-major-dimensions" class="nav-link" data-scroll-target="#two-major-dimensions">Two major dimensions</a></li>
+  <li><a href="#five-types-of-opinion" id="toc-five-types-of-opinion" class="nav-link" data-scroll-target="#five-types-of-opinion">Five types of opinion</a></li>
+  <li><a href="#mapping-geopolitical-proximities" id="toc-mapping-geopolitical-proximities" class="nav-link" data-scroll-target="#mapping-geopolitical-proximities">Mapping geopolitical proximities</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>We present here very preliminary results of an analysis of data frome the Global Attitude Survey, collected by the Pew Research Center since 2002. More details can be found in another website dedicated to <a href="https://worldregio.github.io/pew_opi/">World Polarisation</a></p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data used in our analysis has been extracted from the website of the Pew Research Center where they can be freely downloaded. They are more precisely extraction from the Pew Global Attitude Survey from 2002 to present (2023). From 2002 to 2023, 22 waves of the PGAS has been realized and the majority of questions has changed over time or have been formulated in a different way, which make comparisons difficult. We have therefore selected a very limited number of questions which has kept exactly the same wording over time and has been asked in different waves.</p>
+<section id="the-opinion-on-world-powers" class="level3">
+<h3 class="anchored" data-anchor-id="the-opinion-on-world-powers">The opinion on world powers</h3>
+<p>We will focus here on the question related to opinion of people about the USA and other major states and international organisations in the world. This question is more complex because it is a battery of questions about different countries but also sometimes different people, different organisation or even different religions. The general rule is to start by the question about the opinion of USA (and eventually “Americans”) and then to propose the other items in a random order. It suggest that USA/Americans are used as a reference around which we can measure positive or negative deviations. Another important complication with this question is the fact that some items are proposed to all countries under investigation but other are only asked in selected countries. In this case, we are oblige to admit that the comparison will be biased because the full list of items has a systemic influence on the results about each item. As an example, consider the formulation of the question in the waves of 2009 an 2019.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/quest_opi_country_2009.jpg" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Question on opinion about countries in 2009</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/quest_opi_country_2019.jpg" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Question on opinion about countries in 2019</figcaption>
+</figure>
+</div>
+<p>The wording of the question is the same and the ordinal scale at four level is equivalent, but the fact that the list of items has changed introduce a difficulty in the analysis of the results, even if we decide to focus only the items that are present in the two waves (USA, China, Russia, EU, UN). In 2009, the evaluation is influenced by questions about religions which is not the case in 2019. Even if we consider a single year like 2019, the fact that NATO or Germany are added to the items in Europe but not in other countries of the world will probably modify the answers about Russia. Considering the difficulties induced by the halo effect, we have decided to limit our selection of answers to the items that (1) has been asked to all countries and (2) the item that are about states or regional organization but not about peoples or religions. In the following analysis, we limit our analysis to USA, China, Russia and EU that are the item that has been themost frequently asked.</p>
+</section>
+<section id="spatial-coverage" class="level3">
+<h3 class="anchored" data-anchor-id="spatial-coverage">Spatial coverage</h3>
+<p>There is a great variability in the list and number of states that was investigated by the PGAS. Generally speaking the number of states investigated was more important for the odd-numbered years with a larger extension toward developping countries from the South. The even-numberd years was generally characterised by a lower number of countries and a focus on rich countries from the North. But they are many exceptions to this rule.</p>
+<ul>
+<li><p>The countries that has been the most present in the 22 waves are members of “the Western” (Germany, France, UK, Spain, Japan, Poland) and can be considered as “friends” of the US. The US themselves has not been investogated in the final period 2021-2023, probably because the questions asked in PGAS are also asked in other national surveys of the Pew Research Center (PRC). It is certainly possible to find the data for these years elsewhere on the website of the PRC.</p></li>
+<li><p>Russia has been systematically investigated from 2002 to 2015 but not in 2016. Then present again in 2017-2019 but not after. We can imagine that the possibility to realize surveys in Russia became more difficult after the first war of Ukraine (2014) and impossible with the beginning of the Covid crisis (2020)</p></li>
+<li><p>China was investigated in 2002 and in 2005-2016 but never after this period of time. As in the case of Russia, we can imagine that it became difficult and finally impossible to realize surveys in these country after the designation of Xi Jiping as head of state in 2013.</p></li>
+<li><p>In the ‘South’, the coverage is much more important for large emerging countries (Indian Indonesia, Turkey, Brazil, …) than smaller one.</p></li>
+<li><p>Africa is less covered than Middle-East</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>From statistical point of view we should just keep in the moment that the survey has been realized at least one time in 70 countries of the world. But only a minority of them are likely to be used for the analysis of trends over long period of time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/coverage.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">Spatial coverage of the global attitude survey (2002-2023)</figcaption>
+</figure>
+</div>
+<p>Looking at the map, it appears very clearly an uneven spatial distribution with very spare coverage in Africa or central Asia as compared to Americas, Europa and Southern or Eastern Asia. The PGAS will therefore not offer a perfect basis for the analysis of the evolution of global opinion in the world. But it makes nevertheless possible to explore some great tendencies in all part of the world between 2002 and 2023.</p>
+</section>
+<section id="multidimensional-array" class="level3">
+<h3 class="anchored" data-anchor-id="multidimensional-array">Multidimensional array</h3>
+<p>In order to have a better formalisation of the data, we will transform the database in a multidimensional structure where each opinion will be describe by a single variable <span class="math inline">\(O_{ijt}\)</span> where :</p>
+<ul>
+<li><span class="math inline">\(O\)</span> is an opinion measured on a Likert scale with 4 levels (<em>“Very favorable”, “Almost favorable”, “Almost unfavorable”,“Very Unfavorable”</em>)</li>
+<li><span class="math inline">\(i\)</span> is the origin of the opinion (i.e.&nbsp;the place of survey where the opinion has been collected)</li>
+<li><span class="math inline">\(j\)</span> is the target of the opinion (i.e.&nbsp;the country or organisation that was evaluated). We limit here the value to three case that are USA, China and Russia.</li>
+<li><span class="math inline">\(t\)</span> the time period (i.e.&nbsp;wave of survey) of collection of the opinion.</li>
+</ul>
+<p>The database is eventually completed by two structural parameter describing the age <span class="math inline">\(A_{it}\)</span> and the sex <span class="math inline">\(S_{it}\)</span> of the person who has formulated the opinion. We can eventually cross the results with another variable <span class="math inline">\(R_{it}\)</span> describing the opinion on religion using another Likert scale with 4 levels.</p>
+<p>Lest but not least each sample collected in a country i a t time t is associated with a weigthing criteria <span class="math inline">\(W_{it}\)</span> that insure a better representation of the full population.</p>
+<p>We transform Oijt in a boolean variable Fijt related to favorable opinion (very favorable or mostly favoable) and we eliminate people without opinion.</p>
+</section>
+</section>
+<section id="evolution-of-global-opinion-on-major-power" class="level2">
+<h2 class="anchored" data-anchor-id="evolution-of-global-opinion-on-major-power">Evolution of global opinion on major power</h2>
+<p>We have used a logit model where the probability to formulate a positive opinion depends from the place of survey (as some countries are more likely to give positive or negative opinions to all target countries) and the combination of the time period and the target countries.</p>
+<p><span class="math inline">\(log \frac{p}{1-p} = \alpha + \beta_i.origin_i + \phi_{jt}.[target\times time]_{jt}\)</span></p>
+<p>We can therefore extract the parameters <span class="math inline">\(\phi_{jt\)</span> which indicate for each target country (USA, Russia, China, EU) an estimation of the probability to receive a favorable opinion at each period of time where the survey provide information.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/model_jt.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">Evolution of global opinion on major world powers (2003-2023)</figcaption>
+</figure>
+</div>
+<p>After elimination of the variations related to countries of origin, we obtain comparative parameter of appreciations of world powers at different period of time and we can draw tendencies through interpolation by loess method. What appears clearly in the figure is a recent divergence between US and European Union on the one hand, China and Russia on the other hand. More precisely :</p>
+<ul>
+<li><p><em>European Union</em> has maintained a good level of appreciation during all the period with apparentlyan increase between 2014 and 2019-23, but difficult to validate because lack of data.</p></li>
+<li><p><em>USA</em> has experimented a more chaotic trend with ups and downs in relation with the different presidents. But has a whole the general trend appears to be positive during the period.</p></li>
+<li><p><em>China</em> had initially an excellent position and was the most appreciated world power in 2005-2006 and also 2009-2013. But this favorable appreciation declined regularly and especially in 2020 , probably in relation with the covid crisis.</p></li>
+<li><p><em>Russia</em> has the same appreciation than USA in 2007-2008 and remained stable with just a slow decline in 2015. But the decrease was very strong after 2019 and the lowest level was reached in 2022-23 with the second war in Ukraine.</p></li>
+</ul>
+<p>This results has to be cautiously interpreted because, despite the fact to control the effect of the places of survey, it remains a strong influence of the selection of countries involved or excluded from the Global Attitude Survey.</p>
+</section>
+<section id="classification-of-survey-countries-according-to-world-power-preferences" class="level2">
+<h2 class="anchored" data-anchor-id="classification-of-survey-countries-according-to-world-power-preferences">Classification of survey countries according to world power preferences</h2>
+<p>We can proceed to a second analysis where we try to evaluate the average opinion of survey countries on the four world power during the period of observation 2002-2023. We assume therefore that the hierarchy of opinion of this world power has remained stable over time inside each survey country which is probably not the case. But we expect to reveal some general organisation of the world in regions sharing the same geopolitical attitudes. The logit model used in this case take the form :</p>
+<p><span class="math inline">\(log \frac{p}{1-p} = \alpha + \delta_t.time_t + \tau_{jt}.[origin\times target]_{ij}\)</span></p>
+<p>We obtain a table of the parameter <span class="math inline">\(\tau_{jt}\)</span> with fours columns (one for each power) and as many lines as survey countries. We eliminate the lines corresponding to countries that has not given an opinion about each of the four world powers. We eliminate also USA, Russia and China in order to avoid biases related to self appreciation. This table is then used for the realization of a Principal Component Analysis and a Hierachical Clustering using war crteria.</p>
+<section id="two-major-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="two-major-dimensions">Two major dimensions</h3>
+<p><img src="img/model_it_acp.png" class="img-fluid" width="800" alt="PCA on preferences of survey countries for world powers"> We notice that the two first dimension summarize more than 80% of the information and only minor details are collected by dimension three and four.</p>
+<ul>
+<li>Dim1 reveals a <strong>general opinion on the four world powers</strong> that can be generally positive (<em>right</em>) or generally negative (<em>left</em>).</li>
+<li>Dim2 reveals a <strong>polarisation between the ‘Western and the Rest’ or, said differently, between ‘Global North and Global South’</strong>. Countries located on the top are more favorable to Russia and China than to the US and EU. Countries on the bottom are characterized by the opposite.</li>
+<li>Dim3 characterized specific situations of <strong>dissociation between preferences for China and Russia</strong> that can for example happen in the case of Vietnam.</li>
+<li>Dim4 characterized excpetional cases of <strong>dissociation between preferences for US and Europe</strong> that can for example happen in the case of UK.</li>
+</ul>
+<p>We can now examine the position of survey countries on these different dimensions. But we can firstly proceed to a hieararchical clustering in order to discuss the position of group of countries rather than single ones. We obtain clearly five group of countries with characteristic profiles.</p>
+</section>
+<section id="five-types-of-opinion" class="level3">
+<h3 class="anchored" data-anchor-id="five-types-of-opinion">Five types of opinion</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/model_it_cah.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">Hierachical clustering of survey countries</figcaption>
+</figure>
+</div>
+<ul>
+<li><p><strong>Cluster 1</strong> is characterized by a very negative opinion about USA and EU and a negative opinion about Russia. Only China is characterized by an average opinion comparable to the rest of the world. The countries member of this cluster are typically arabic countries from Middle East (<em>Egypt, Jordan, Pakistan, Occupied Palestinian Territories, Turkey</em>)</p></li>
+<li><p><strong>Cluster 2</strong> is characterized by a positive opinion of EU, a neutral opinon on USA and a very negative opinion of Russia and China. This situation is typically observed in countries member of the EU but rather from western and northern part (<strong>France, Germany, Belgium, Sweden</strong>) but also other OECD countries (<strong>Japan, Korea, Canada, Australia, …</strong>)</p></li>
+<li><p><strong>Cluster 3</strong> is generally characterized by an average profile. More precisely it is characterized by neutral opinion of Russia, slighltly negative opinion on USA, slightly positive opinion on China and more negative opinion on European Union than in the rest of the sample. This situation corresponds to a large cluster of emerging countries located all around the world, including european countries from southern and eastern Europe like (<em>Greece, Slovenia, Czech Republic, …</em>). UK is member of this group as well as Israel.</p></li>
+<li><p><strong>Cluster 4</strong> is a very specific case of countries having a much more positive opinion on Russia than usual, a rather positive opinion on USA and a rather negative opinion on China. Countries located in this group are european countries with good relations with Russia (<em>Bulgaria, Slovakia</em>) or asian countries characterized by negative relation with China, generally due to border conflicts (<em>India, Vietnam, Philippines</em>).</p></li>
+<li><p><strong>Cluster 5</strong> is the complete opposite of Cluster 1 and is characterized by very positive opinion about all the world powers without distinction. This situation is typically associated to all countries from sub-saharan Africa present in the surveys (<em>Ivory Coast, Ethiopia, Ghana, …</em>) but also some other poor and developping countries (<em>Bangladesh, Nicaragua, Thailand</em>)</p></li>
+</ul>
+</section>
+<section id="mapping-geopolitical-proximities" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-geopolitical-proximities">Mapping geopolitical proximities</h3>
+<p>We can finally elabore a <strong>geopolitical map of countries opinion about the major world power</strong> over the period 2002-2023. To do that, we project the clusters on the two first dimensions of PCA and visualize tthe ellipes of dispersion of each group.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/model_it_acpcah.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">Geoplitical map of world opinion on major powers</figcaption>
+</figure>
+</div>
+<p>The most striking result of the analysis is the fact that many clusters are clearly associated to specific <strong>world regions</strong> even if they are exceptions to this rule. Further research will try to explain the origin of this regional pattern. Is it just a matter of correlation with hidden variables ? Or are they geographical effects of distance and diffusion of opinion ?</p>
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{grasland2024,
+  author = {Grasland, Claude},
+  title = {Mapping {Global} {Opinion}},
+  date = {2024-10-12},
+  url = {https://worldregio.github.io/en/posts/2024-10-12-global-opinion/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-grasland2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Grasland, Claude. 2024. <span>“Mapping Global Opinion.”</span> October
+12, 2024. <a href="https://worldregio.github.io/en/posts/2024-10-12-global-opinion/">https://worldregio.github.io/en/posts/2024-10-12-global-opinion/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2024, Claude Grasland</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
